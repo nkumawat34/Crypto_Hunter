@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
-import Icon from "react-crypto-icons";
 import { Link,useNavigate,usehistory } from 'react-router-dom';
 export default function Homepage() {
 
@@ -25,7 +24,7 @@ export default function Homepage() {
   return (
     <div class='bg-black text-white'>
        <div className=''> <h1 className='text-3xl font-bold text-center pt-4'>Search a currency</h1></div>
-        <div className='flex flex-row'><div className='mx-3'>  <Icon name="btc" size={50} /></div><h1 className='text-3xl text-white'>Cryto Hunter</h1></div>
+        <div className='flex flex-row'><h1 className='text-3xl text-white'>Cryto Hunter</h1></div>
       
         <form class="flex items-center max-w-sm mx-auto mt-5" >   
     <label for="simple-search" class="sr-only">Search</label>
