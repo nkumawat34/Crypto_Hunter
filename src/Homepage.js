@@ -24,11 +24,11 @@ export default function Homepage() {
   return (
     <div class='bg-black text-white'>
        
-       <div className='fixed '>
-    <h1 className=' text-2xl md:text-3xl text-white mt-4 '>Crypto Hunter</h1>
+       <div className='fixed mx-4'>
+    <h1 className=' text-2xl md:text-3xl text-white mt-4  '>Crypto Hunter</h1>
 </div>
 
-        <div className=''> <h1 className='text-2xl md:text-3xl font-bold text-center pt-4'>Search a currency</h1></div>
+        <div className='mx-4'> <h1 className='text-2xl md:text-3xl font-bold text-right sm:text-center pt-4'>Search a currency</h1></div>
         <form class="flex items-center max-w-sm mx-auto mt-5" >   
     <label for="simple-search" class="sr-only">Search</label>
     <div class="relative w-full">
@@ -53,10 +53,10 @@ export default function Homepage() {
                 return (
                     <div key={coin.id}>
                        <div className='flex flex-row justify-center mt-5'>
-                        <div className='w-12'>
+                        <div className='w-12 mx-4 relative '>
                         <img src={coin.image} style={{height:"30px",width:"30px"}}/>
                         </div>
-                        <div className='w-64 mx-5 '>
+                        <div className='w-64 mx-0 md:mx-5 '>
                         <button onClick={()=>navigate('/trade', { state: { coin:coin } })}>{coin.name}</button>
                         </div>
                         <div className='w-64 mx-5 md:mx-0'>

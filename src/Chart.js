@@ -60,11 +60,11 @@ useEffect(() => {
     fetchData();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className='flex justify-center'>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
   return (
     <div>
-      <h2>{coin.name} Price Over the Last 30 Days</h2>
+      <h2 className='text-center'>{coin.name} Price Over the Last 30 Days</h2>
       <div style={{ width: '100vw', height: '80vh' }} className='flex justify-center'>
   {Object.keys(chartData).length ? <Line data={chartData} /> : null}
 </div>
