@@ -27,8 +27,8 @@ export default function Homepage() {
        <div className='fixed mx-4'>
     <h1 className=' text-2xl md:text-3xl text-white mt-4  '>Crypto Hunter</h1>
 </div>
-
-        <div className='mx-4'> <h1 className='text-2xl md:text-3xl font-bold text-right sm:text-center pt-4'>Search a currency</h1></div>
+        
+        <div className='mr-4 md:mx-4'> <h1 className='text-2xl md:text-3xl font-bold text-right sm:text-center pt-4'>Search a currency</h1></div>
         <form class="flex items-center max-w-sm mx-auto mt-5" >   
     <label for="simple-search" class="sr-only">Search</label>
     <div class="relative w-full">
@@ -45,7 +45,14 @@ export default function Homepage() {
     </button>
 </form>
 
-
+<div class='flex flex-row text-white mt-5 text-2xl'>
+            <div class='ml-[13%] invisible sm:visible'>Image</div>
+            <div class='ml-[7%]'>Name</div>
+            <div class='ml-[7%]'>Price</div>
+            <div class='ml-[7%]'>Volume</div>
+            <div class='ml-[5%] invisible md:visible'> 24th change</div>
+            <div class='ml-[3%] invisible md:visible'>Market Cap</div>
+        </div>
 <div class=' flex flex-col mt-6'>
     <div class='flex flex-col'>
         {
@@ -53,26 +60,26 @@ export default function Homepage() {
                 return (
                     <div key={coin.id}>
                        <div className='flex flex-row mt-5 md:justify-center' >
-                        <div className='w-32 ml-0  md:ml-12'>
+                        <div className='w-32 ml-16 md:ml-12'>
                         <img src={coin.image} style={{height:"30px",width:"30px"}}/>
                         </div>
-                        <div className='md:w-32 mx-4'>
+                        <div className='w-32 mx-4'>
                         <button onClick={()=>navigate('/trade', { state: { coin:coin } })}>{coin.name}</button>
                         </div>
-                        <div className='md:w-32 mx-4'>
+                        <div className='w-32 mx-4'>
                             ${coin.current_price}
                         </div>
-                        <div className='md:w-32 mx-4'>
+                        <div className='w-32 mx-4'>
                         ${coin.total_volume}
                         </div>
-                        <div className='md:w-32 mx-4'>
+                        <div className='w-32 mx-4 invisible md:visible'>
                         {coin.price_change_percentage_24h < 0 ? (
                                             <span className="text-red-500">{coin.price_change_percentage_24h}%</span>
                                         ) : (
                                             <span className="text-green-500">{coin.price_change_percentage_24h}%</span>
                                         )}
                             </div>
-                            <div class='md:w-64 invisible md:visible'>
+                            <div class='w-64 invisible md:visible'>
     Mkt_Cap {coin.market_cap}
 </div>
 
