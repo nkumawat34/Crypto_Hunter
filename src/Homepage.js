@@ -52,27 +52,27 @@ export default function Homepage() {
             filtercoins.map((coin) => {
                 return (
                     <div key={coin.id}>
-                       <div className='flex flex-row justify-center mt-5'>
-                        <div className='w-12 mx-4 relative '>
+                       <div className='flex flex-row mt-5 md:justify-center' >
+                        <div className='w-32 ml-0  md:ml-12'>
                         <img src={coin.image} style={{height:"30px",width:"30px"}}/>
                         </div>
-                        <div className='w-64 mx-0 md:mx-5 '>
+                        <div className='md:w-32 mx-4'>
                         <button onClick={()=>navigate('/trade', { state: { coin:coin } })}>{coin.name}</button>
                         </div>
-                        <div className='w-64 mx-5 md:mx-0'>
+                        <div className='md:w-32 mx-4'>
                             ${coin.current_price}
                         </div>
-                        <div className='w-64'>
+                        <div className='md:w-32 mx-4'>
                         ${coin.total_volume}
                         </div>
-                        <div className='w-64 mx-5 md:mx-0'>
+                        <div className='md:w-32 mx-4'>
                         {coin.price_change_percentage_24h < 0 ? (
                                             <span className="text-red-500">{coin.price_change_percentage_24h}%</span>
                                         ) : (
                                             <span className="text-green-500">{coin.price_change_percentage_24h}%</span>
                                         )}
                             </div>
-                            <div class='w-64 invisible md:visible'>
+                            <div class='md:w-64 invisible md:visible'>
     Mkt_Cap {coin.market_cap}
 </div>
 
